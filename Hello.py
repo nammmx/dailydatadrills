@@ -248,7 +248,7 @@ col1, col2, col3 = st.columns([1,8,1])
 with col1:
     st.write("")
 with col2:
-    st.markdown("<h1 style='padding: 0;text-align: center; color: #113f67;  font-size:2.25rem;'>Daily Dose of <span style=' color:#87c0cd';>PostgreSQL</span></h1><h3 style='text-align: center; color: #113f67; font-size:1.25rem; '>Practice SQL with ChatGPT-Generated Databases, Questions, and Queries.</h3>", unsafe_allow_html=True)
+    st.markdown("<h1 style='padding: 0;text-align: center; color: #113f67;  font-size:2.5rem;'>Daily Dose of <span style=' color:#87c0cd';>PostgreSQL</span></h1><h3 style='text-align: center; color: #113f67; font-size:1.5rem; '>Practice SQL with ChatGPT-Generated Databases, Questions, and Queries.</h3>", unsafe_allow_html=True)
 with col3:
     st.write("")
 
