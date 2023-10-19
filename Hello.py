@@ -192,7 +192,7 @@ st.markdown(
 st.markdown('''
 <style>
 [data-testid="stHorizontalBlock"]  {
-    padding:0 40px;
+    padding:0;
 }
 div.st-emotion-cache-ocqkz7 e1f1d6gn3 {
     padding:0 140px;
