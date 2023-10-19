@@ -33,6 +33,7 @@ custom_css = {
 }
 #################################################################################################### Functions
 def create_sidebar():
+    st.sidebar.write("")
     st.sidebar.subheader("Quick Queries")
     st.sidebar.write("")
     st.sidebar.write("Data Query (DQL)")
