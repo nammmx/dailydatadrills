@@ -76,7 +76,7 @@ def add_css():
             """
             <style>
                 [data-testid="block-container"] {
-                    padding:1rem 3rem 1rem;
+                    padding:1rem 1.5rem 2rem;
                 }
                 section[data-testid="stSidebar"] {
                     width: 275px !important; 
