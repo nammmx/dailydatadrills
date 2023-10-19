@@ -43,6 +43,9 @@ st.markdown(
         margin-bottom: 1rem;
         }
         body img {
+        padding: 0 0px;
+        }
+        .st-emotion-cache-1v0mbdj e115fcil1 {
         padding: 0 40px;
         }
         .container {
@@ -193,6 +196,7 @@ st.markdown('''
 <style>
 [data-testid="stHorizontalBlock"]  {
     padding:0;
+    gap: 0;
 }
 div.st-emotion-cache-ocqkz7 e1f1d6gn3 {
     padding:0 140px;
@@ -253,7 +257,7 @@ with col3:
     st.write("")
 
 st.title("")
-col1, col2, col3, col4 = st.columns([4,4,4,4])
+col1, col2, col3, col4, col5 = st.columns([15,15,1,15,15])
 with col1:
     st.write("")
 with col2:
@@ -261,18 +265,19 @@ with col2:
     if switch_to_user:
         switch_page("User")
 with col3:
+    st.markdown("""<p style="color:white">.</p>""", unsafe_allow_html=True)
+with col4:
     switch_to_user = st.button("Documentation", use_container_width=True)
     if switch_to_user:
         switch_page("Documentation")
-with col4:
+with col5:
     st.write("")
 
 css = '''
 <style>
 section.main > div:has(~ footer ) {
-    padding-bottom: 5px;
+    padding-bottom: 0px;
 }
 </style>
 '''
 st.markdown(css, unsafe_allow_html=True)
-
