@@ -17,7 +17,7 @@ from functions_and_variables import *
 st.set_page_config(layout="wide")
 password_entered = st.text_input("Password", type="password", key="password")
 if password_entered == st.secrets["password"]:
-            
+    password_entered = st.write("")
     openai.api_key = st.secrets["openai_api_key"]
     
     cloudinary.config( 
