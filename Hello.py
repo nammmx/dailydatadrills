@@ -209,7 +209,7 @@ div.stButton > button:first-child {
     padding: 10px;
 }
 [data-testid="block-container"] {
-    padding: 2rem 1rem 2rem;
+    padding: 2rem 1.5rem 2rem;
 }
 [data-testid="collapsedControl"] {
     display: none
