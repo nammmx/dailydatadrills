@@ -270,9 +270,9 @@ def run():
     with col4:
         st.write("")
         
-section.main > div:has(~ footer ) {
-    padding-bottom: 5px;
-}
+    section.main > div:has(~ footer ) {
+        padding-bottom: 5px;
+    }
     
 
 
