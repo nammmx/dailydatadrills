@@ -269,11 +269,15 @@ def run():
             switch_page("Documentation")
     with col4:
         st.write("")
-        
+            
+    css = '''
+    <style>
     section.main > div:has(~ footer ) {
         padding-bottom: 5px;
     }
-    
+    </style>
+    '''
+    st.markdown(css, unsafe_allow_html=True)
 
 
 
