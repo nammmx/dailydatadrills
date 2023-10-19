@@ -27,7 +27,7 @@ add_logo()
 #add_css_and_animations()
 add_css()
 
-create_sidebar()
+#create_sidebar()
 
 st.sidebar.header("")
 ######################################################################################## generate chatgpt output on button click
