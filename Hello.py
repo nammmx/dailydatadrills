@@ -42,7 +42,9 @@ st.markdown(
         margin-top: 1rem;
         margin-bottom: 1rem;
         }
-
+        body img {
+        padding: 0 40px;
+        }
         .container {
         position: fixed;
         top:0;
