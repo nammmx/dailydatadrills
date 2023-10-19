@@ -15,9 +15,7 @@ from functions_and_variables import *
 
 
 st.set_page_config(layout="wide")
-password_entered = st.text_input("Password", type="password", key="password")
-if password_entered == st.secrets["password"]:
-    password_entered = st.write("")
+if st.text_input("Password", type="password", key="password") == st.secrets["password"]:
     openai.api_key = st.secrets["openai_api_key"]
     
     cloudinary.config( 
@@ -145,7 +143,7 @@ if password_entered == st.secrets["password"]:
         create_texts(display_options=display_options, selected_id=selected_id, step_query=step_query_solution_2_explanation,role_hostname=hostname_admin, role_database=database_admin, role_username=username_admin, role_port_id=port_id_admin, role_pwd=pwd_admin, header=header_solution_2_explanation)
         create_editor(display_options=display_options, selected_id=selected_id, step_editor_empty=solution_2_query_empty, ace_key=key_solution_2,ace_key2=key_solution_2_2, step_query=step_query_solution_2, step_editor=step_editor_solution_2,header=header_solution_2,role_hostname=hostname_admin, role_database=database_admin, role_username=username_admin, role_port_id=port_id_admin, role_pwd=pwd_admin,aggrid_key=aggrid_key_solution_2)
 else:
-    st.write("Incorrect password")
+    st.stop()
     
     
     
