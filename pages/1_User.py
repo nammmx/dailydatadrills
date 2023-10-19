@@ -32,7 +32,7 @@ add_css()
 ### execute_query(query = create_tracking_tables)
 
 
-create_sidebar()
+#create_sidebar()
 
 ######################################################################################## display topic database
 try:
