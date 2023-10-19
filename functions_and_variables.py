@@ -8,6 +8,7 @@ import re
 import sqlparse
 import cloudinary
 import cloudinary.api
+import hmac
 from st_aggrid import GridOptionsBuilder, AgGrid
 
 hostname_user = st.secrets["hostname_user"]
@@ -32,6 +33,8 @@ custom_css = {
     ".ag-header-viewport ": {"background-color": "rgb(222, 225, 230,0.25) !important;"},
 }
 #################################################################################################### Functions
+
+
 def create_sidebar():
     st.sidebar.divider()
     st.sidebar.write("")
@@ -72,6 +75,9 @@ def add_css():
     st.markdown(
             """
             <style>
+                [data-testid="block-container"] {
+                    padding:1rem 1rem 10rem;
+                }
                 section[data-testid="stSidebar"] {
                     width: 275px !important; 
                 }
