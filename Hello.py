@@ -269,7 +269,10 @@ def run():
             switch_page("Documentation")
     with col4:
         st.write("")
-    
+        
+section.main > div:has(~ footer ) {
+    padding-bottom: 5px;
+}
     
 
 
