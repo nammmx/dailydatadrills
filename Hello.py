@@ -43,7 +43,7 @@ st.markdown(
         margin-bottom: 1rem;
         }
         body img {
-        padding: 0 0px;
+        padding: 0 60px;
         }
         .st-emotion-cache-1v0mbdj e115fcil1 {
         padding: 0 40px;
@@ -61,6 +61,7 @@ st.markdown(
         position: absolute;
         bottom: -100px;
         animation: boxes 2s infinite ease-out;
+        padding:0;
         }
 
         .square:nth-child(1) {
@@ -239,7 +240,7 @@ st.markdown(html_string, unsafe_allow_html=True)
 
 logo = cloudinary.api.resource_by_asset_id("1166fd5abfeb24a93a991cb500f36595")["url"]
 
-col1, col2, col3 = st.columns([5,3,5])
+col1, col2, col3 = st.columns([5,4,5])
 with col1:
     st.write("")
 with col2:
