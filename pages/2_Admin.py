@@ -15,33 +15,6 @@ from functions_and_variables import *
 
 
 st.set_page_config(layout="wide")
-def check_password():
-    """Returns `True` if the user had the correct password."""
-
-    def password_entered():
-        """Checks whether a password entered by the user is correct."""
-        if hmac.compare_digest(st.session_state["password"], st.secrets["password"]):
-            st.session_state["password_correct"] = True
-            del st.session_state["password"]  # Don't store the password.
-        else:
-            st.session_state["password_correct"] = False
-
-    # Return True if the passward is validated.
-    if st.session_state.get("password_correct", False):
-        return True
-
-    # Show input for password.
-    st.text_input(
-        "Password", type="password", on_change=password_entered, key="password"
-    )
-    if "password_correct" in st.session_state:
-        st.error("😕 Password incorrect")
-    return False
-
-
-if not check_password():
-    st.stop()  # Do not continue if check_password is not True.
-
 password_entered = st.text_input("Password", type="password", key="password")
 if password_entered == st.secrets["password"]:
             
@@ -173,7 +146,6 @@ if password_entered == st.secrets["password"]:
         create_editor(display_options=display_options, selected_id=selected_id, step_editor_empty=solution_2_query_empty, ace_key=key_solution_2,ace_key2=key_solution_2_2, step_query=step_query_solution_2, step_editor=step_editor_solution_2,header=header_solution_2,role_hostname=hostname_admin, role_database=database_admin, role_username=username_admin, role_port_id=port_id_admin, role_pwd=pwd_admin,aggrid_key=aggrid_key_solution_2)
 else:
     st.write("Incorrect password")
-    st.stop()
     
     
     
