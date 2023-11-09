@@ -289,7 +289,7 @@ def generate_chatgpt_results():
     message_history = []
     for i in input_list:
         message_history.append({"role": "user", "content": i})
-        completion = openai.ChatCompletion.create(model="gpt-4", messages=message_history)
+        completion = openai.ChatCompletion.create(model="gpt-4-turbo", messages=message_history)
         reply_content = completion.choices[0].message.content
         message_history.append({"role": "assistant", "content": reply_content})
     
