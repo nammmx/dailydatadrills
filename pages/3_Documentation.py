@@ -326,7 +326,7 @@ AND (nspname != 'public');""", language="sql")
     st.caption("This only returns a table with delete queries. To delete the tables, execute these queries.")
     st.code("""SELECT 'DROP TABLE IF EXISTS ' || tablename || ' CASCADE;' AS to_delete  
 FROM pg_tables  
-WHERE schemaname = 'dailysql_schema' and tablename NOT IN ('daily_tables', 'daily_sql_topics');""", language="sql")
+WHERE schemaname = 'dailysql_schema' and tablename NOT IN ('daily_tables', 'daily_sql_topics', 'dailytables_dailysqltopics');""", language="sql")
     st.divider()
 
 st.write("")
