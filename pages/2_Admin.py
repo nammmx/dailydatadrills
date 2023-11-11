@@ -132,7 +132,7 @@ if check_password():
     
         df = pd.DataFrame(list(zip(options_id, options_date, options_sql, options_db, options_question)),
                 columns =['ID', 'Date', 'SQL Topics', 'DB Topics', 'Question'])
-        df = df.sort_values(["Date","ID"], ascending=[False,False])
+        df = df.sort_values(["Date","ID"], ascending=[False,True])
     except Exception as error:
         st.write(error)
     
