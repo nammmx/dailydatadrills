@@ -329,7 +329,7 @@ def generate_chatgpt_results():
     
     return message_history, create_tables, insert_data, display_tables, questions, hints, solution_code, solution_code2, solution_explanation, solution_explanation2, daily_db_topic, daily_sql_topics
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, experimental_allow_widgets=True)
 def execute_query(query, role_hostname, role_database, role_username, role_port_id, role_pwd, query_arguments = None, result = None, len_query_list=1):
     list_of_db_queries = []
     for i in range(0, len_query_list):
@@ -368,7 +368,7 @@ def execute_query(query, role_hostname, role_database, role_username, role_port_
         if conn is not None:
             conn.close()
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, experimental_allow_widgets=True)
 def execute_query_2(query, role_hostname, role_database, role_username, role_port_id, role_pwd, aggrid_key=None):
     # handle multiline comments
     ## if /**/ in string, delete everything inbetween
@@ -428,7 +428,7 @@ def execute_query_2(query, role_hostname, role_database, role_username, role_por
         AgGrid(list_of_df[i], key=f"{aggrid_key}{list_of_df[i]}{query}", theme="streamlit", enable_quicksearch=False, gridOptions=gridOptions, height=232, data_return_mode="FILTERED", columns_auto_size_mode="FIT_CONTENTS", custom_css=custom_css)
 
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, experimental_allow_widgets=True)
 def create_editor(display_options, selected_id, step_editor_empty, ace_key, ace_key2, step_query, step_editor,role_hostname,role_database, role_username, role_port_id, role_pwd, image="",erd_url="",header=None, aggrid_key=None):
     st.header(header)
     try:
@@ -482,7 +482,7 @@ def create_editor(display_options, selected_id, step_editor_empty, ace_key, ace_
             # if there is no more value for daily_tables_id (an id (row) was de-selected again), delete all tables (except for tracking tables)
     #        delete_tables(delete_query)  
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, experimental_allow_widgets=True)
 def generate_user(display_options, selected_id, step_query,role_hostname,role_database, role_username, role_port_id, role_pwd,header=""):
     try:
         # try to get the daily_tables_id
@@ -500,7 +500,7 @@ def generate_user(display_options, selected_id, step_query,role_hostname,role_da
         except Exception as error:
             st.write(error)
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, experimental_allow_widgets=True)
 def create_texts(display_options, selected_id,step_query,role_hostname,role_database, role_username, role_port_id, role_pwd, header=None):
     st.header(header)
     try:
@@ -516,7 +516,7 @@ def create_texts(display_options, selected_id,step_query,role_hostname,role_data
         st.markdown(f'<p style="font-family:monospace; font-size:14px;font-weight: 100;background:rgb(222, 225, 230,0.25);padding:22px;border-radius:7px">{try_create_table_query}</p>', unsafe_allow_html=True)
 
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, experimental_allow_widgets=True)
 def delete_tables(delete_query,role_hostname,role_database,role_username,role_port_id,role_pwd):
     to_delete = execute_query(query=delete_query,role_hostname=role_hostname, role_database=role_database, role_username=role_username, role_port_id=role_port_id, role_pwd=role_pwd)
     list_to_delete = []
